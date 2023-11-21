@@ -234,10 +234,8 @@
     $(document).ready(function () {
 
             $('#province').on('change', function (e) {
-                console.log(e);
                 var provinceid = e.target.value;
                 $.get('{{ route('get-state-list') }}?provinceid=' + provinceid, function (data) {
-                    console.log(data);
                     $('#district').empty();
 
                     $.each(data, function (index, regenciesObj) {
