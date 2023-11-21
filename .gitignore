@@ -23,6 +23,5 @@ Homestead.json
 .phpunit.result.cache
 .idea/*
 .DS_Store
-storage/*
 public/uploads/*.jpg
 public/uploads/*.png
