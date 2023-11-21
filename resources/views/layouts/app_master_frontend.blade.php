@@ -7,6 +7,7 @@
         <title>{{ strtolower($title_page ?? "Đồ án tốt nghiệp")   }}</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="icon" sizes="32x32" type="image/png" href="{{ asset('logo.jpg') }}" />
+        
         @yield('css')
         <style>
             .mainmenubtn {
@@ -55,6 +56,9 @@
                 display: flex;
                 outline: 0;
                 padding: 0 10px;
+                cursor: pointer;
+            }
+            .js-menu-cate{
                 cursor: pointer;
             }
         </style>
@@ -112,6 +116,22 @@
         <script>
             var DEVICE = '{{  device_agent() }}'
         </script>
+        <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
         @yield('script')
+
+        <script>
+            jQuery(document).ready(function($){
+                $(document).on('click', '.js-menu-cate', function(e){
+                    e.preventDefault();
+                    var self = $(this);
+                    self.toggleClass('active');
+                    if(self.hasClass('active')){
+                        $('#menu-main').show();
+                    }else{
+                        $('#menu-main').hide();
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

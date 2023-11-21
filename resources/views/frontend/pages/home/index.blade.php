@@ -146,7 +146,6 @@
 		var routeRenderSlide  = '{{ route('ajax_get.slide') }}';
 		var CSS = "{{ asset('css/home.min.css') }}";
     </script>
-    <script type="text/javascript">
-		<?php $js = file_get_contents('js/home.js');echo $js;?>
+    <script type="text/javascript" src="{{ asset('js/home.js') }}">
     </script>
 @stop
